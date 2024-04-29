@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        body
+        {
+            background-image: none;
+            background-color: <% if(locals.backgroundColor != null){ %> <%= backgroundColor %> <% }%> ;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="weather" >
+        <div class="weather_icon weather_sound">
+
+            <img src=" <%= img_url %> " alt="weather_icon" class="image">
+
+        </div>
+        <div class="weather_info">
+            <% if (locals.main != null) { %>
+                <p>Weather Type: <%= main %></p>
+                <br>
+                <p>Weather Description: <%= description %></p>
+                <br>
+                <p>Temperature: <%= temp %></p>
+                <br>
+                <p>Feels like: <%= feels_like %></p>
+                <br>
+            <% } else {%>
+                <p>Submit the details for the weather information.</p>
+            <% } %>
+        </div>
+
+
+    </div>
+
+</body>
+</html>
